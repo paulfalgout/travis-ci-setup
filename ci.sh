@@ -14,6 +14,11 @@ then
   npm install backbone@"$BACKBONE"
 fi
 
+if [[ -n "$MARIONETTE" ]]
+then
+  npm install backbone.marionette@"$MARIONETTE"
+fi
+
 if [[ -n "$LODASH" ]]
 then
   npm install lodash@"$LODASH"
