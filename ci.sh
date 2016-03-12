@@ -1,6 +1,5 @@
 #!/bin/bash
 
-npm install -g grunt-cli
 npm install
 npm dedupe
 
@@ -24,10 +23,11 @@ then
   npm install lodash@"$LODASH"
 
   # Lodash@2 and Lodash@3 have different file structures
-  if [[ "$LODASH" < "3.0" || "$LODASH" >= "4.0" ]]
+  if [[ "$LODASH" < "3.0" ]]
   then
     cp node_modules/lodash/lodash.js node_modules/underscore/underscore.js
   else
     cp node_modules/lodash/index.js node_modules/underscore/underscore.js
+    cp node_modules/lodash/lodash.js node_modules/underscore/lodash.js
   fi
 fi
