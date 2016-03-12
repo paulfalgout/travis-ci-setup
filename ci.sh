@@ -24,7 +24,7 @@ then
   npm install lodash@"$LODASH"
 
   # Lodash@2 and Lodash@3 have different file structures
-  if [[ "$LODASH" == "3.0" ]]
+  if [[ "$LODASH" < "3.0" || "$LODASH" >= "4.0" ]]
   then
     cp node_modules/lodash/lodash.js node_modules/underscore/underscore.js
   else
